@@ -13,7 +13,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest
+// 테스트에 필요한 빈들을 명시적으로 표시하는 것도 나쁘지 않다.
+@WebMvcTest({EventConverter.StringToEventConverter.class, EventController.class})
 public class EventControllerTest {
 
     @Autowired
